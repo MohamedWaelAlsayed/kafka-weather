@@ -4,6 +4,7 @@ import json
 import pandas as pd
 import matplotlib.dates as mdates
 import datetime
+import numpy as np
 
 kafka_bootstrap_servers = "localhost:9092"
 kafka_topic = "temperature"
@@ -51,7 +52,8 @@ try:
         num_points = len(data_frame)
         plt.text(0.95, 0.2, f"Number of Points: {num_points}",
                  transform=ax.transAxes, ha='right', va='top')
-
+        plt.text(0.95, 0.3, f"Average: {np.mean(data_frame['value'])}",
+                 transform=ax.transAxes, ha='right', va='top')
         plt.pause(0.01)
 
 except KeyboardInterrupt:

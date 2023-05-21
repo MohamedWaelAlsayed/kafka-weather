@@ -49,4 +49,4 @@ while True:
     print(json.dumps(humidity_data).encode("utf-8"))
     producer.flush()
     # wait 2 seconds
-    time.sleep(1)
+    time.sleep(2)
